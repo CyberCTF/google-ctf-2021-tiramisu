@@ -4,12 +4,5 @@
   "question": "Retrieve the flag from the challenge service.",
   "category": "CRYPTO",
   "difficulty": 4,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "ecdh",
-    "invalid-curve-attack",
-    "protobuf",
-    "elliptic-curves",
-    "cryptography"
-  ]
+  "evidence_kind": "SECRET"
 }
