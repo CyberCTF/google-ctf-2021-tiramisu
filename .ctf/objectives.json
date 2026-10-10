@@ -1,0 +1,72 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Recover the server's private key through the key exchange and read the flag.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2021-tiramisu}",
+      "hints": [
+        "You name the curve of your point; the server's key lives on another one.",
+        "Small subgroups leak the key modulo small numbers: combine the pieces."
+      ],
+      "steps": [
+        {
+          "key": "exchange",
+          "title": "Identify the key exchange",
+          "prompt": "Which key agreement sets up the secure channel? (acronym)",
+          "check": {
+            "answer": [
+              "ecdh",
+              "elliptic curve diffie-hellman",
+              "elliptic-curve diffie-hellman"
+            ]
+          }
+        },
+        {
+          "key": "format",
+          "title": "Identify the encoding",
+          "prompt": "Which serialization format carries the protocol messages?",
+          "check": {
+            "answer": [
+              "protobuf",
+              "protocol buffers",
+              "protocol buffer",
+              "proto"
+            ]
+          }
+        },
+        {
+          "key": "attack",
+          "title": "Name the attack",
+          "prompt": "What attack sends a point that is not on the server's curve to learn its key?",
+          "check": {
+            "answer": [
+              "invalid curve",
+              "invalid curve attack",
+              "invalid-curve attack",
+              "small subgroup",
+              "small subgroup attack",
+              "twist attack"
+            ]
+          }
+        },
+        {
+          "key": "combine",
+          "title": "Combine the pieces",
+          "prompt": "Which theorem combines residues modulo small primes into the full key?",
+          "check": {
+            "answer": [
+              "crt",
+              "chinese remainder theorem",
+              "chinese remainder"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
