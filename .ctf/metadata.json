@@ -1,8 +1,11 @@
 {
+  "project_name": "cyberlabs-google-ctf-2021-tiramisu",
+  "slug": "google-ctf-2021-tiramisu",
   "title": "Google CTF 2021: tiramisu",
   "description": "A secure channel set up with ECDH over a protobuf protocol. The server checks that the client's point lies on the curve the client names, while its own key lives on P-224.",
-  "question": "Recover the server's ECDH private key and read the flag.",
-  "category": "CRYPTO",
+  "category": "crypto",
   "difficulty": 3,
-  "evidence_kind": "SECRET"
+  "evidence_kind": "SECRET",
+  "capabilities": [],
+  "question": "Recover the server's ECDH private key and read the flag."
 }
